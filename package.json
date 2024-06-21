@@ -10,7 +10,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ilies-t/behance-node-ts.git"
+		"url": "git+https://github.com/OmarHosamCodes/behance-node-ts-ts.git"
 	},
 	"keywords": ["Behance", "Node"],
 	"author": "ilies t",
