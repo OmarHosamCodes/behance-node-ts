@@ -12,6 +12,71 @@ import { MainMethods } from "./MainMethods";
 /**
  * Main package class
  */
+export class User {
+	id: string;
+	first_name: string;
+	last_name: string;
+	username: string;
+	city: string;
+	state: string;
+	country: string;
+	location: string;
+	company: string;
+	occupation: string;
+	created_on: string;
+	url: string;
+	profile_picture: string;
+	banner_image_url: string;
+	followers: number;
+	following: number;
+	appreciations: number;
+	views: number;
+	comments: number;
+
+	constructor() {
+		this.id = "";
+		this.first_name = "";
+		this.last_name = "";
+		this.username = "";
+		this.city = "";
+		this.state = "";
+		this.country = "";
+		this.location = "";
+		this.company = "";
+		this.occupation = "";
+		this.created_on = "";
+		this.url = "";
+		this.profile_picture = "";
+		this.banner_image_url = "";
+		this.followers = 0;
+		this.following = 0;
+		this.appreciations = 0;
+		this.views = 0;
+		this.comments = 0;
+	}
+
+	fromJson(json: any) {
+		this.id = json.profile.owner.id;
+		this.first_name = json.profile.owner.first_name;
+		this.last_name = json.profile.owner.last_name;
+		this.username = json.profile.owner.username;
+		this.city = json.profile.owner.city;
+		this.state = json.profile.owner.state;
+		this.country = json.profile.owner.country;
+		this.location = json.profile.owner.location;
+		this.company = json.profile.owner.company;
+		this.occupation = json.profile.owner.occupation;
+		this.created_on = json.profile.owner.created_on;
+		this.url = json.profile.owner.url;
+		this.profile_picture = json.profile.owner.images["276"];
+		this.banner_image_url = json.profile.owner.banner_image_url;
+		this.followers = json.profile.owner.stats.followers;
+		this.following = json.profile.owner.stats.following;
+		this.appreciations = json.profile.owner.stats.appreciations;
+		this.views = json.profile.owner.stats.views;
+		this.comments = json.profile.owner.stats.comments;
+	}
+}
 
 export default class Behance {
 	// methods
@@ -38,27 +103,9 @@ export default class Behance {
 				// then return basic data
 			}
 			// make the response
-			return {
-				id: jsonResponse.profile.owner.id,
-				first_name: jsonResponse.profile.owner.first_name,
-				last_name: jsonResponse.profile.owner.last_name,
-				username: jsonResponse.profile.owner.username,
-				city: jsonResponse.profile.owner.city,
-				state: jsonResponse.profile.owner.state,
-				country: jsonResponse.profile.owner.country,
-				location: jsonResponse.profile.owner.location,
-				company: jsonResponse.profile.owner.company,
-				occupation: jsonResponse.profile.owner.occupation,
-				created_on: jsonResponse.profile.owner.created_on,
-				url: jsonResponse.profile.owner.url,
-				profile_picture: jsonResponse.profile.owner.images["276"],
-				banner_image_url: jsonResponse.profile.owner.banner_image_url,
-				followers: jsonResponse.profile.owner.stats.followers,
-				following: jsonResponse.profile.owner.stats.following,
-				appreciations: jsonResponse.profile.owner.stats.appreciations,
-				views: jsonResponse.profile.owner.stats.views,
-				comments: jsonResponse.profile.owner.stats.comments,
-			};
+			const user = new User();
+			user.fromJson(jsonResponse);
+			return user;
 		});
 	}
 

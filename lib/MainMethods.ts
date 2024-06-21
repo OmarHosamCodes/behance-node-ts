@@ -21,7 +21,13 @@ export class MainMethods {
 	 */
 	public static async getJSONFromUrl(url: string): Promise<any> {
 		// search CSS value with cheerio
-		const html = await axios.get(url);
+		const html = await axios.get(url, {
+			headers: {
+				"Access-Control-Allow-Origin": "*",
+				"Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+				"Access-Control-Allow-Headers": "Content-Type",
+			},
+		});
 		const htmlData = html.data;
 		const $ = cheerio.load(htmlData);
 

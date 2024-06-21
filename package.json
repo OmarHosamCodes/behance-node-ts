@@ -1,6 +1,6 @@
 {
 	"name": "behance-node-ts",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "An asynchronous module for scrapping Behance using Typescript.",
 	"main": "index.js",
 	"scripts": {
