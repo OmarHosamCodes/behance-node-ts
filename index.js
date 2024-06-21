@@ -6,4 +6,4 @@
  * @licence Apache Licence 2.0
  */
 
-module.exports = require('./lib/Behance');
+module.exports = require("./lib/Behance");

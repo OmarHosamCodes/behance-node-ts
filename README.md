@@ -1,4 +1,4 @@
-# Behance-node
+# Behance-node with TS
 [![NPM Version](https://img.shields.io/npm/v/behance-node.svg)](https://npmjs.org/package/behance-node)
 [![Strict TypeScript Checked](https://badgen.net/badge/Built%20With/TypeScript)](https://www.typescriptlang.org)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
@@ -86,10 +86,6 @@ Get a random project data using sort.
             .then( result => console.log(result) )
             .catch( error => console.log(error) );
         ```
-
-# Links
-* [NPM Package](https://www.npmjs.com/package/behance-node)
-* [Moe Salah - artist from documentation examples](https://www.behance.net/moesalah)
 
 # License
 [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/)
